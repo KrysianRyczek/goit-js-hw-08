@@ -119,10 +119,6 @@ class CreateModal {
   }
   
   #createModal() {
-     //if (currentImage === null) return //lightbox.close();
-    //  const textParagraph = currentImage.getAttribute("alt")
-    //  const imgSrc = currentImage.getAttribute("data-source")
-    //  const modal = basicLightbox.create(`<img src="${imgSrc}"><p> ${textParagraph}</p>`)
      const modal = basicLightbox.create(document.querySelector("#modal"))
      return modal
   }
@@ -144,65 +140,3 @@ class CreateModal {
  const gallerys  = new CreateGallery(images)
 const modal = new CreateModal()
 
-
-
-//  class Gallery {
-//         #currentImageIndex;
-//         #images;
-//         #galleryRoot;
-//         #modal;
-
-//         constructor({ images, galleryRoot, modalRoot }) {
-//             this.#images = images;
-//             this.#currentImageIndex = null;
-//             this.#modal = this.#createModal(modalRoot);
-//             this.#mountModal(galleryRoot);
-//         }
-
-//         #getCurrentImage() {
-//             if (this.#currentImageIndex === null) return null;
-//             return this.#images[this.#currentImageIndex] ?? null;
-//         }
-
-//         #createModal(modalRoot) {
-//             const onShow = this.#renderModal.bind(this);
-//             return basicLightbox.create(modalRoot, { onShow });
-//         }
-
-//         #renderModal(lightbox) {
-//             const currentImage = this.#getCurrentImage();
-//             if (currentImage === null) return lightbox.close();
-
-//             const modal = lightbox.element();
-
-//             const img = modal.querySelector("img");
-//             img.alt = currentImage.description;
-//             img.src = currentImage.original;
-
-//             modal.querySelector("p").textContent = currentImage.description;
-//             modal.querySelector("button").onclick = lightbox.close;
-//         }
-
-//         #mountModal(galleryRoot) {
-//             if (!this.#modal) return;
-
-//             galleryRoot.addEventListener("click", (event) => {
-//                 if (event.target.tagName === "ARTICLE" || event.target.parentNode.tagName === "ARTICLE") {
-//                     this.#currentImageIndex = event.target.id || event.target.parentNode.id;
-//                     this.#modal.show();
-//                 }
-//             });
-
-//             document.addEventListener("keydown", () => {
-//                 this.#modal.close();
-//             });
-//         }
-//     }
-
-
-
-//     const gallery = new Gallery({
-//         images,
-//         galleryRoot: document.querySelector("#gallery"),
-//         modalRoot: document.querySelector("#modal"),
-//     });
